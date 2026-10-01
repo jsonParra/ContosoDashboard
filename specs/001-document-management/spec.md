@@ -5,6 +5,12 @@
 **Status**: Draft  
 **Input**: User description: `StakeholderDocs/document-upload-and-management-feature.md`
 
+## Clarifications
+
+### Session 2026-09-30
+
+- Q: ¿Qué debe hacer la aplicación si no hay un motor antivirus disponible en el entorno sin conexión? → A: Mantener el archivo bloqueado y no permitir su acceso hasta que la inspección se complete.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Upload and organize documents (Priority: P1)
@@ -101,7 +107,7 @@ Employees associate documents with projects and tasks, upload them from task det
 - **FR-004**: The system MUST show upload progress and a success or failure result for every file submitted.
 - **FR-005**: The system MUST require a non-empty title and one category from Project Documents, Team Resources, Personal Files, Reports, Presentations, or Other; description, project association, and user-defined tags MUST be optional.
 - **FR-006**: The system MUST record the uploader, upload date and time, file size, and file type for each accepted document.
-- **FR-007**: The system MUST complete a malware and virus safety inspection before making a file available; files that fail or have not completed inspection MUST remain inaccessible to other users.
+- **FR-007**: The system MUST complete a malware and virus safety inspection before making a file available; files that fail or have not completed inspection MUST remain inaccessible to any user. If an inspection engine is unavailable, the file MUST remain pending and inaccessible until inspection completes successfully.
 - **FR-008**: The system MUST enforce access based on ownership, project membership, explicit sharing, and authorized administrative or team-lead/project-manager responsibilities. It MUST recheck permission for document operations and MUST NOT reveal unauthorized documents in lists, search, preview, or download.
 - **FR-009**: The system MUST provide an employee with a list of documents they uploaded, displaying title, category, upload date, file size, and associated project.
 - **FR-010**: The system MUST allow sorting by title, upload date, category, and file size, and filtering by category, associated project, and date range.
